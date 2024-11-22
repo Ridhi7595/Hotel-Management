@@ -32,7 +32,7 @@ public class AddRoom extends JFrame implements ActionListener{
 	setContentPane(contentPane);
 	contentPane.setLayout(null);
         
-        ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/twelve.jpg"));
+        ImageIcon i1  = new ImageIcon(getClass().getResource("/icons/twelve.jpg"));
                 Image i3 = i1.getImage().getScaledInstance(500, 300,Image.SCALE_DEFAULT);
                 ImageIcon i2 = new ImageIcon(i3);
                 JLabel l15 = new JLabel(i2);
@@ -96,7 +96,7 @@ public class AddRoom extends JFrame implements ActionListener{
 	contentPane.add(l5);
 
 
-        comboBox_3 = new JComboBox(new String[] { "Single Bed", "Double Bed"});
+        comboBox_3 = new JComboBox(new String[] { "Single-Bed", "Double-Bed"});
 	comboBox_3.setBounds(176, 230, 154, 20);
 	contentPane.add(comboBox_3);
 

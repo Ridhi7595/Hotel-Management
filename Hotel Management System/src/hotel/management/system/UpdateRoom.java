@@ -59,7 +59,7 @@ PreparedStatement pst = null;
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
                 
-                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/seventh.jpg"));
+                ImageIcon i1  = new ImageIcon(getClass().getResource("/icons/seventh.jpg"));
                 Image i3 = i1.getImage().getScaledInstance(550, 250,Image.SCALE_DEFAULT);
                 ImageIcon i2 = new ImageIcon(i3);
                 JLabel l1 = new JLabel(i2);
@@ -119,15 +119,15 @@ PreparedStatement pst = null;
                                 ResultSet rs1 = c.s.executeQuery("select * from customer where number = "+s1);
                                 
                                 while(rs1.next()){
-                                    txt_Room.setText(rs1.getString("room_number"));    
+                                    txt_Room.setText(rs1.getString("room"));    
                                 }
                             }catch(Exception ee){}
                             try{
                                 conn c  = new conn();
-                                ResultSet rs2 = c.s.executeQuery("select * from room where room_number = "+txt_Room.getText());
+                                ResultSet rs2 = c.s.executeQuery("select * from room where roomnumber = "+txt_Room.getText());
                                 while(rs2.next()){
                                     txt_Ava.setText(rs2.getString("availability")); 
-                                    txt_Status.setText(rs2.getString("clean_status"));
+                                    txt_Status.setText(rs2.getString("cleaning_status"));
                                 }
                             }catch(Exception ee){}
                         }
@@ -143,7 +143,8 @@ PreparedStatement pst = null;
 				
 				try{
                                     conn c = new conn();
-                                    String str = "update room set clean_status = '"+txt_Status.getText()+"' where room_number = "+txt_Room.getText();
+                                    String str = "update room set cleaning_status = '"+txt_Status.getText()+"', availability = '"+txt_Ava.getText()+"' where roomnumber = "+txt_Room.getText();
+
                                     c.s.executeUpdate(str);
                                     JOptionPane.showMessageDialog(null, "Update Sucessful");
                                     

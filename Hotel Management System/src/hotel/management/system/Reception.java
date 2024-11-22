@@ -26,7 +26,7 @@ public class Reception extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
                 
-                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/fourth.jpg"));
+                ImageIcon i1  = new ImageIcon(getClass().getResource("/icons/fourth.jpg"));
                 Image i3 = i1.getImage().getScaledInstance(500, 500,Image.SCALE_DEFAULT);
                 ImageIcon i2 = new ImageIcon(i3);
                 JLabel l1 = new JLabel(i2);

@@ -121,7 +121,7 @@ public class AddEmployee extends JFrame{ //Third Frame
             add(AddPassengers);
 			
      
-            ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/tenth.jpg"));
+            ImageIcon i1 = new ImageIcon(getClass().getResource("/icons/tenth.jpg"));
             Image i3 = i1.getImage().getScaledInstance(500, 500,Image.SCALE_DEFAULT);
             ImageIcon i2 = new ImageIcon(i3);
             JLabel image = new JLabel(i2);

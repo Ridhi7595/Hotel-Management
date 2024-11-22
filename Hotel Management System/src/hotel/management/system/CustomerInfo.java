@@ -32,9 +32,7 @@ public class CustomerInfo extends JFrame {
 	private JLabel lblStatus;
 	private JLabel lblNewLabel_1;
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

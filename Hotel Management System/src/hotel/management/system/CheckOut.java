@@ -5,7 +5,7 @@
  */
 package hotel.management.system;
 
-import java.awt.BorderLayout;
+//import java.awt.BorderLayout;
 import java.awt.*;
 import java.awt.EventQueue;
 
@@ -57,7 +57,7 @@ public class CheckOut extends JFrame{
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
                 
-                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/sixth.jpg"));
+                ImageIcon i1  = new ImageIcon(getClass().getResource("/icons/sixth.jpg"));
                 Image i3 = i1.getImage().getScaledInstance(400, 225,Image.SCALE_DEFAULT);
                 ImageIcon i2 = new ImageIcon(i3);
                 JLabel l1 = new JLabel(i2);
@@ -74,17 +74,11 @@ public class CheckOut extends JFrame{
 		contentPane.add(lblName);
                 
                 c1 = new Choice();
-                try{
-                    conn c = new conn();
-                    ResultSet rs = c.s.executeQuery("select * from customer");
-                    while(rs.next()){
-                        c1.add(rs.getString("number"));    
-                    }
-                }catch(Exception e){ }
+               
                 c1.setBounds(130, 82, 150, 20);
 		contentPane.add(c1);
                 
-                ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/tick.png"));
+                ImageIcon i4 = new ImageIcon(getClass().getResource("/icons/tick.png"));
                 Image i5 = i4.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
                 ImageIcon i6 = new ImageIcon(i5);
                 JButton l2 = new JButton(i6);
@@ -103,7 +97,7 @@ public class CheckOut extends JFrame{
                             
                             if(rs.next()){
                                 System.out.println("clicked");
-                                t1.setText(rs.getString("room_number"));    
+                                t1.setText(rs.getString("roomnumber"));    
                             }
                         }catch(Exception e){ }
                     }
@@ -119,7 +113,14 @@ public class CheckOut extends JFrame{
 		contentPane.add(t1);
                 
                 
-                
+		 try{
+             conn c = new conn();
+             ResultSet rs = c.s.executeQuery("select * from customer");
+             while(rs.next()){
+                 c1.add(rs.getString("number"));    
+                 t1.setText(rs.getString("room"));
+             }
+         }catch(Exception e){ }
                 
                 
 		
@@ -130,7 +131,7 @@ public class CheckOut extends JFrame{
                                 String id = c1.getSelectedItem();
                                 String s1 = t1.getText();
 				String deleteSQL = "Delete from customer where number = "+id;
-                                String q2 = "update room set availability = 'Available' where room_number = "+s1;
+                                String q2 = "update room set availability = 'Available' where roomnumber = "+s1;
                                 
                                 
 				conn c = new conn();

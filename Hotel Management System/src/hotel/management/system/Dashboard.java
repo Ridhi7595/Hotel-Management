@@ -24,7 +24,7 @@ public class Dashboard extends JFrame{
         setLayout(null); 
 
         
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/third.jpg"));
+        ImageIcon i1 = new ImageIcon(getClass().getResource("/icons/third.jpg"));
         Image i2 = i1.getImage().getScaledInstance(1950, 1000,Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2); 
 	JLabel NewLabel = new JLabel(i3);
@@ -34,7 +34,7 @@ public class Dashboard extends JFrame{
         JLabel AirlineManagementSystem = new JLabel("THE TAJ GROUP WELCOMES YOU");
 	AirlineManagementSystem.setForeground(Color.WHITE);
         AirlineManagementSystem.setFont(new Font("Tahoma", Font.PLAIN, 46));
-	AirlineManagementSystem.setBounds(600, 60, 1000, 85);
+	AirlineManagementSystem.setBounds(400, 60, 1000, 85);
 	NewLabel.add(AirlineManagementSystem);
 		
 		

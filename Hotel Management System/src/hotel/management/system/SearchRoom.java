@@ -94,8 +94,8 @@ public class SearchRoom extends JFrame {
 		
 		
                 c1 = new Choice();
-                c1.add("Single Bed");
-                c1.add("Double Bed");
+                c1.add("Single-Bed");
+                c1.add("Double-Bed");
                 c1.setBounds(153, 70, 120, 20);
 		contentPane.add(c1);
 		
